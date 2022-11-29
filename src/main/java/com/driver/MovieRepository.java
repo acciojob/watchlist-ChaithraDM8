@@ -15,7 +15,7 @@ public class MovieRepository {
     HashMap<String,Director> directorDatabase =new HashMap<>();
     HashMap<String,List<String>> movieDirectorDatabase =new HashMap<>();
 
-    List<Movie> listofMovies;
+    List<String> listofMovies;
     public void addMovie(Movie movie){
         movieDatabase.put(movie.getName(),movie);
 
@@ -33,10 +33,10 @@ public class MovieRepository {
         return directorDatabase.get(name);
     }
 
-    public List<Movie> getAllMovies() {
+    public List<String> getAllMovies() {
         listofMovies= new ArrayList<>();
         for(Movie movies: movieDatabase.values()){
-            listofMovies.add(movies);
+            listofMovies.add(movies.getName());
         }
         return listofMovies;
 
@@ -53,16 +53,17 @@ public class MovieRepository {
             movieDirectorDatabase.put(directorName, list);
         }
     }
-    public List<Movie> getMoviesByDirectorName(String directorName) {
-        List<String> list = new ArrayList<>();
-        List<Movie> movieList = new ArrayList<>();
-        Movie movie;
-        list = movieDirectorDatabase.get(directorName);
-        for (String movieName : list) {
-          movie=  movieDatabase.get(movieName);
-            movieList.add(movie);
-        }
-        return movieList;
+    public List<String> getMoviesByDirectorName(String directorName) {
+//        List<String> list = new ArrayList<>();
+//        List<Movie> movieList = new ArrayList<>();
+//        Movie movie;
+//        list = movieDirectorDatabase.get(directorName);
+//        for (String movieName : list) {
+//          movie=  movieDatabase.get(movieName);
+//            movieList.add(movie);
+//        }
+//        return movieList;
+        return movieDirectorDatabase.get(directorName);
     }
 
     public void deleteDirectorByName(String directorName) {

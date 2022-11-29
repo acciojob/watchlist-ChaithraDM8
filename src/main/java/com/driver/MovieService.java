@@ -29,7 +29,7 @@ public class MovieService {
         return movieRepository.getDirectorByName(name);
     }
 
-    public List<Movie> getAllMovies() {
+    public List<String> getAllMovies() {
         return movieRepository.getAllMovies();
     }
 
@@ -37,7 +37,7 @@ public class MovieService {
         movieRepository.addMovieDirectorPair(movieName,directorName);
     }
 
-    public List<Movie> getMoviesByDirectorName(String directorName) {
+    public List<String> getMoviesByDirectorName(String directorName) {
         return movieRepository.getMoviesByDirectorName(directorName);
     }
 
