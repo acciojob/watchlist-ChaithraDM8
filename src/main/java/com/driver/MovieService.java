@@ -18,12 +18,6 @@ public class MovieService {
     }
 
     public void addDirector(Director director) {
-//        if(movieRepository.getDirector(director.getName())){
-//           int numOfMovies=   movieRepository.getNumberofMovies(director.getName())+director.getNumberOfMovies();
-//            director.setNumberOfMovies(numOfMovies);
-//            movieRepository.addDirector(director);
-//        }
-//        else
             movieRepository.addDirector(director);
     }
 
