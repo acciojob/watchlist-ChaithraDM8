@@ -46,7 +46,7 @@ public class MovieController {
         return new ResponseEntity(movieService.getAllMovies(), HttpStatus.ACCEPTED);
     }
     @GetMapping("/movies/get-movies-by-director-name/{director}")
-    public ResponseEntity<List<String>>  getMoviesByDirectorName(@PathVariable("director") String directorName){
+    public ResponseEntity<List<Movie>>  getMoviesByDirectorName(@PathVariable("director") String directorName){
         return new ResponseEntity(movieService. getMoviesByDirectorName(directorName), HttpStatus.ACCEPTED);
     }
     @DeleteMapping("/movies/delete-director-by-name")

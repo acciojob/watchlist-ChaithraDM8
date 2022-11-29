@@ -53,8 +53,16 @@ public class MovieRepository {
             movieDirectorDatabase.put(directorName, list);
         }
     }
-    public List<String> getMoviesByDirectorName(String directorName) {
-        return movieDirectorDatabase.get(directorName);
+    public List<Movie> getMoviesByDirectorName(String directorName) {
+        List<String> list = new ArrayList<>();
+        List<Movie> movieList = new ArrayList<>();
+        Movie movie;
+        list = movieDirectorDatabase.get(directorName);
+        for (String movieName : list) {
+          movie=  movieDatabase.get(movieName);
+            movieList.add(movie);
+        }
+        return movieList;
     }
 
     public void deleteDirectorByName(String directorName) {
